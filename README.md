@@ -23,5 +23,6 @@ How it works:
 - Use BaamStudios.MixamoAnimation.SkinningData to draw the model.
 
 TODO: 
-- prepare and upload files
+- test uploaded files
+- write anim importer
 - create proper documentation
