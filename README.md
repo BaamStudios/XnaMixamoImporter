@@ -17,11 +17,10 @@ How it works:
 - Run zip2anim.bat with the downloaded zip as parameter.
 - You should get a .anim file with the same name as the zip file.
 - Add the fbx file to the xna content project, process with SkinnedModelProcessor from the xna sample.
-- Add the anim files to the xna game project.
-- Load the model ingame with ContentManager.Load<Model>();
+- Add the anim files to the xna game project, activate "copy if newer" in the properties.
+- Load the model ingame with ContentManager.Load<Model>(path);
 - Load the anim files with new BaamStudios.MixamoAnimation(path);
 - Use BaamStudios.MixamoAnimation.SkinningData to draw the model.
-
 
 TODO: 
 - prepare and upload files
