@@ -18,6 +18,9 @@ namespace SkinnedModel
     /// <summary>
     /// Describes the position of a single bone at a single point in time.
     /// </summary>
+    #region BaamStudios XnaMixamoImporter Change
+    [Serializable]
+    #endregion
     public class Keyframe
     {
         /// <summary>

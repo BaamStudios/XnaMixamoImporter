@@ -20,6 +20,9 @@ namespace SkinnedModel
     /// Microsoft.Xna.Framework.Content.Pipeline.Graphics.AnimationContent type.
     /// It holds all the keyframes needed to describe a single animation.
     /// </summary>
+    #region BaamStudios XnaMixamoImporter Change
+    [Serializable]
+    #endregion
     public class AnimationClip
     {
         /// <summary>

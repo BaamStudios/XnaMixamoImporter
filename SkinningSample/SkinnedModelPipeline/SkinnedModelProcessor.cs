@@ -113,11 +113,13 @@ namespace SkinnedModelPipeline
                 animationClips.Add(animation.Key, processed);
             }
 
-            if (animationClips.Count == 0)
-            {
-                throw new InvalidContentException(
-                            "Input file does not contain any animations.");
-            }
+            #region BaamStudios XnaMixamoImporter Change
+            //if (animationClips.Count == 0)
+            //{
+            //    throw new InvalidContentException(
+            //                "Input file does not contain any animations.");
+            //}
+            #endregion
 
             return animationClips;
         }

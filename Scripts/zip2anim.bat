@@ -1,0 +1,1 @@
+call "%~dp0\internal_convert.bat" anim %1

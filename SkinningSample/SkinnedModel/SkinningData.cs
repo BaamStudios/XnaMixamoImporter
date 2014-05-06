@@ -8,6 +8,8 @@
 #endregion
 
 #region Using Statements
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -19,6 +21,9 @@ namespace SkinnedModel
     /// Combines all the data needed to render and animate a skinned object.
     /// This is typically stored in the Tag property of the Model being animated.
     /// </summary>
+    #region BaamStudios XnaMixamoImporter Change
+    [Serializable]
+    #endregion
     public class SkinningData
     {
         /// <summary>
