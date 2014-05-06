@@ -1,4 +1,4 @@
-mixamo2xna
+XnaMixamoImporter
 ==========
 
 Content pipeline tools for importing animated models from mixamo.com to XNA
