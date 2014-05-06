@@ -23,6 +23,5 @@ How it works:
 - Use BaamStudios.MixamoAnimation.SkinningData to draw the model.
 
 TODO: 
-- test uploaded files
-- write anim importer
+- change xna skinned model example to use a sample mixamo animation
 - create proper documentation
