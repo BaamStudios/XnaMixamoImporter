@@ -9,20 +9,20 @@ using SkinnedModel;
 
 namespace BaamStudios.AnimationController
 {
-    internal class Animation
+    public class Animation
     {
-        internal readonly string Name;
-        internal readonly AnimationPlayer AnimationPlayer;
-        internal readonly SkinningData SkinningData;
+        public readonly string Name;
+        public readonly AnimationPlayer AnimationPlayer;
+        public readonly SkinningData SkinningData;
 
-        internal Animation(string name, Stream file)
+        public Animation(string name, Stream file)
         {
             Name = name;
-            SkinningData = Load(file);
+            SkinningData = LoadSkinningData(file);
             AnimationPlayer = new AnimationPlayer(SkinningData);
         }
 
-        private static SkinningData Load(Stream file)
+        public static SkinningData LoadSkinningData(Stream file)
         {
             return (SkinningData) new BinaryFormatter().Deserialize(file);
 
@@ -63,7 +63,7 @@ namespace BaamStudios.AnimationController
             //return serializer.DeserializeFromString(new StreamReader(file).ReadToEnd());
         }
 
-        internal void Start()
+        public void Start()
         {
             AnimationPlayer.StartClip(SkinningData.AnimationClips.First().Value);
             AnimationPlayer.Update(TimeSpan.Zero, true, Matrix.Identity);
