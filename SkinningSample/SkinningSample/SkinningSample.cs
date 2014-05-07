@@ -9,6 +9,9 @@
 
 #region Using Statements
 using System;
+using System.IO;
+using System.Linq;
+using BaamStudios.AnimationController;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -65,7 +68,14 @@ namespace SkinningSample
             currentModel = Content.Load<Model>("dude");
 
             // Look up our custom skinning information.
-            SkinningData skinningData = currentModel.Tag as SkinningData;
+            #region BaamStudios XnaMixamoImporter Change
+            //SkinningData skinningData = currentModel.Tag as SkinningData;
+            SkinningData skinningData;
+            using (var fileStream = new FileStream("Content/dude_idle.anim", FileMode.Open))
+            {
+                skinningData = Animation.LoadSkinningData(fileStream);
+            }
+            #endregion
 
             if (skinningData == null)
                 throw new InvalidOperationException
@@ -74,7 +84,10 @@ namespace SkinningSample
             // Create an animation player, and start decoding an animation clip.
             animationPlayer = new AnimationPlayer(skinningData);
 
-            AnimationClip clip = skinningData.AnimationClips["Take 001"];
+            #region BaamStudios XnaMixamoImporter Change
+            //AnimationClip clip = skinningData.AnimationClips["Take 001"];
+            AnimationClip clip = skinningData.AnimationClips.Values.First();
+            #endregion
 
             animationPlayer.StartClip(clip);
         }
