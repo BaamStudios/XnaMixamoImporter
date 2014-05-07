@@ -44,5 +44,5 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 - The .anim files will probably only work with the character that was used to export them from [mixamo.com](https://www.mixamo.com) because other characters ususally have different t-pose bone positions. However, this has not been confirmed yet and there is a chance that different characters may work with the same .anim files if the skeletons contain the same bones and the two characters have similar proportions.
 
 ##TODO
-- change xna skinned model example to use a sample mixamo animation
+- change [skinned model sample](SkinningSample/SkinningSample) to use a sample mixamo animation
 - fix known bugs
