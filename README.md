@@ -42,6 +42,7 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 - This project includes the [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model). Some minor changes have been made, which are enclosed in C#-regions containing the word "BaamStudio".
 - The .anim files are just binary serialized [SkinningData](SkinningSample/SkinnedModel/SkinningData.cs). You could use other formats (e.g. json) if you like. There is some commented code prepared in [Animation](BaamStudios.AnimationController/Animation.cs) and [AnimationExtractorModelProcessor](BaamStudios.AnimationExtractorPipeline/AnimationExtractorModelProcessor.cs) to get you started on json format using [ServiceStack.Text](https://servicestack.net/text).
 - This project was built around a character made with [Fuse](https://www.mixamo.com/fuse). Other character generators may not be supported yet. Please contact us if you would like to contribute your changes to support other model sources.
+- The .anim files will probably only work with the character that was used to export them from [mixamo.com](https://www.mixamo.com) because other characters ususally have different t-pose bone positions. However, this has not been confirmed yet.
 
 ##TODO: 
 - change xna skinned model example to use a sample mixamo animation
