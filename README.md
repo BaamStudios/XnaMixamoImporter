@@ -10,11 +10,11 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 - [mixamo.com](https://www.mixamo.com) does not create a model file with multiple animations, so you would have to load the full model once for each animation, which is very inefficient.
 
 ##What you need:
-- XNA 4
-- Blender 2.65 (not later versions!)
-- Autodesk FBX Converter 2013
-- 7-Zip
-- A character on mixamo.com
+- [XNA 4](http://www.microsoft.com/en-us/download/details.aspx?id=23714)
+- [Blender 2.65](http://download.blender.org/release/Blender2.65/) (not later versions!)
+- [Autodesk FBX Converter 2013](http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775920) (or maybe later versions)
+- [7-Zip](http://www.7-zip.org/)
+- A character on [mixamo.com](https://www.mixamo.com)
 
 ##What you get:
 - A binary .fbx file with your character model in t-pose and embedded textures
@@ -40,8 +40,8 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 
 ##Notes:
 - This project includes the [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model). Some minor changes have been made, which are enclosed in C#-regions containing the word "BaamStudio".
-- The .anim files are just binary serialized [SkinningData](SkinningSample/SkinnedModel/SkinningData.cs). You could use other formats (e.g. json) if you like. There is some commented code prepared in [Animation](BaamStudios.AnimationController/Animation.cs) and [AnimationExtractorModelProcessor](BaamStudios.AnimationExtractorPipeline/AnimationExtractorModelProcessor.cs) to get you started on json format.
-- This project has been built around a character which was created with [Fuse](https://www.mixamo.com/fuse). Other character generators may not be supported. Please contact us if you would like to contribute your changes to support other model sources.
+- The .anim files are just binary serialized [SkinningData](SkinningSample/SkinnedModel/SkinningData.cs). You could use other formats (e.g. json) if you like. There is some commented code prepared in [Animation](BaamStudios.AnimationController/Animation.cs) and [AnimationExtractorModelProcessor](BaamStudios.AnimationExtractorPipeline/AnimationExtractorModelProcessor.cs) to get you started on json format using [ServiceStack.Text](https://servicestack.net/text).
+- This project was built around a character made with [Fuse](https://www.mixamo.com/fuse). Other character generators may not be supported yet. Please contact us if you would like to contribute your changes to support other model sources.
 
 ##TODO: 
 - change xna skinned model example to use a sample mixamo animation
