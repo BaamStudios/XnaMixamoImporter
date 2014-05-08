@@ -20,6 +20,10 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 - A binary .fbx file with your character model in t-pose and embedded textures
 - Multiple .anim files with one animation each
 
+## Setup
+- Compile [BaamStudios.AnimationExtractor](BaamStudios.AnimationExtractor) with Visual Studio
+- Make sure that the paths at the top of [internal_convert.bat](Scripts/internal_convert.bat) point to the programs mentioned in _What you need_. This should already be correct in most cases.
+
 ##How to import the character model
 - Export your character with the t-pose animation on [mixamo.com](https://www.mixamo.com) as "include skin" and "Collada for Blender 2.49 (.dae zipped)"
 - Drag the downloaded .zip file on [zip2fbx.bat](Scripts/zip2fbx.bat)
