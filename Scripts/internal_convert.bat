@@ -1,8 +1,11 @@
 @echo off
 
+REM configure these paths
 set FBXCONVERTER="C:\Program Files\Autodesk\FBX\FBX Converter\2013.2\bin\FbxConverter.exe"
 set BLENDER="C:\Program Files\Blender Foundation\Blender\blender"
 set UNZIP="C:\Program Files\7-Zip\7z.exe"
+
+REM part of this toolkit. path should be correct. the AnimationExtractor must be built once with visual studio.
 set ANIMEXTRACTOR="%~dp0\..\BaamStudios.AnimationExtractor\bin\Debug\BaamStudios.AnimationExtractor.exe"
 
 REM check output file format
