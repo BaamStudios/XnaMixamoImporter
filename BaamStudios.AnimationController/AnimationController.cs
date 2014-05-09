@@ -70,5 +70,12 @@ namespace BaamStudios.AnimationController
                 return null;
             return _currentAnimation.AnimationPlayer.GetWorldTransforms();
         }
+
+        public List<string> GetBoneNames()
+        {
+            if (_currentAnimation == null)
+                return null;
+            return _currentAnimation.AnimationPlayer.BoneNames;
+        }
     }
 }

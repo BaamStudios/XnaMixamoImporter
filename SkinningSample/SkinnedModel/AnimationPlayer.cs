@@ -214,5 +214,16 @@ namespace SkinnedModel
         {
             get { return currentTimeValue; }
         }
+
+
+        #region BaamStudios XnaMixamoImporter Change
+        /// <summary>
+        /// Gets the bone names.
+        /// </summary>
+        public List<string> BoneNames
+        {
+            get { return skinningDataValue.BoneNames; }
+        }
+        #endregion
     }
 }

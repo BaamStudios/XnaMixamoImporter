@@ -31,12 +31,19 @@ namespace SkinnedModel
         /// </summary>
         public SkinningData(Dictionary<string, AnimationClip> animationClips,
                             List<Matrix> bindPose, List<Matrix> inverseBindPose,
-                            List<int> skeletonHierarchy)
+                            List<int> skeletonHierarchy
+        #region BaamStudios XnaMixamoImporter Change
+            , List<string> boneNames
+        #endregion
+)
         {
             AnimationClips = animationClips;
             BindPose = bindPose;
             InverseBindPose = inverseBindPose;
             SkeletonHierarchy = skeletonHierarchy;
+            #region BaamStudios XnaMixamoImporter Change
+            BoneNames = boneNames;
+            #endregion
         }
 
 
@@ -56,6 +63,14 @@ namespace SkinnedModel
         [ContentSerializer]
         public Dictionary<string, AnimationClip> AnimationClips { get; private set; }
 
+
+        #region BaamStudios XnaMixamoImporter Change
+        /// <summary>
+        /// Bone names.
+        /// </summary>
+        [ContentSerializer]
+        public List<string> BoneNames { get; private set; }
+        #endregion
 
         /// <summary>
         /// Bindpose matrices for each bone in the skeleton,
