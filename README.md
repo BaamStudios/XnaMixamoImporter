@@ -5,7 +5,7 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 
 ##Motivation
 - Fbx files from [mixamo.com](https://www.mixamo.com) are using the fbx 2013 format which is not supported by xna.
-- The [official way](https://www.mixamo.com/faq/) to convert from fbx 2013 to fbx 2011 (using the Autodesk FBX Converter) produces an animation where the bones are awfully distorted when using the [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model) (e.g. long and bent legs or worse).
+- Simply converting the fbx files to version 2011 with the Autodesk FBX Converter leads to animations where the bones are awfully distorted when using the official xna [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model) (e.g. long and bent legs or worse).
 - Another approach [using blender](http://community.mixamo.com/mixamo/topics/distorted_injured_walk_model_in_xna_4_0) works great with animations, but the textures will be unassigned unless you reassign them by hand. However, this is the approach that this project is based on.
 - [mixamo.com](https://www.mixamo.com) does not create a model file with multiple animations, so you would have to load the full model once for each animation, which is very inefficient.
 
