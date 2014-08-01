@@ -140,7 +140,7 @@
     </ProjectReference>
     <ProjectReference Include="Content\SkinningSampleContent.contentproj">
       <Project>{9B5D0224-74D6-48D6-8733-3B70EF38956C}</Project>
-      <Name>SkinningSampleContent %28Content%29</Name>
+      <Name>SkinningSampleContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
