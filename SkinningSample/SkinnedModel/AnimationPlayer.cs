@@ -31,9 +31,11 @@ namespace SkinnedModel
 
 
         // Current animation transform matrices.
+        #region BaamStudios XnaMixamoImporter Change: changed private to protected
         protected Matrix[] boneTransforms;
         protected Matrix[] worldTransforms;
         protected Matrix[] skinTransforms;
+        #endregion
 
 
         // Backlink to the bind pose and skeleton hierarchy data.
@@ -79,7 +81,11 @@ namespace SkinnedModel
         /// <summary>
         /// Advances the current animation position.
         /// </summary>
-        public virtual void Update(TimeSpan time, bool relativeToCurrentTime,
+        public 
+        #region BaamStudios XnaMixamoImporter Change
+        virtual
+        #endregion
+         void Update(TimeSpan time, bool relativeToCurrentTime,
                            Matrix rootTransform)
         {
             UpdateBoneTransforms(time, relativeToCurrentTime);
@@ -91,7 +97,11 @@ namespace SkinnedModel
         /// <summary>
         /// Helper used by the Update method to refresh the BoneTransforms data.
         /// </summary>
-        public virtual void UpdateBoneTransforms(TimeSpan time, bool relativeToCurrentTime)
+        public 
+        #region BaamStudios XnaMixamoImporter Change
+        virtual
+        #endregion
+        void UpdateBoneTransforms(TimeSpan time, bool relativeToCurrentTime)
         {
             if (currentClipValue == null)
                 throw new InvalidOperationException(
@@ -141,7 +151,11 @@ namespace SkinnedModel
         /// <summary>
         /// Helper used by the Update method to refresh the WorldTransforms data.
         /// </summary>
-        public virtual void UpdateWorldTransforms(Matrix rootTransform)
+        public 
+        #region BaamStudios XnaMixamoImporter Change
+        virtual
+        #endregion
+         void UpdateWorldTransforms(Matrix rootTransform)
         {
             // Root bone.
             worldTransforms[0] = boneTransforms[0] * rootTransform;
@@ -160,7 +174,11 @@ namespace SkinnedModel
         /// <summary>
         /// Helper used by the Update method to refresh the SkinTransforms data.
         /// </summary>
-        public virtual void UpdateSkinTransforms()
+        public 
+        #region BaamStudios XnaMixamoImporter Change
+        virtual
+        #endregion
+         void UpdateSkinTransforms()
         {
             for (int bone = 0; bone < skinTransforms.Length; bone++)
             {
@@ -173,7 +191,11 @@ namespace SkinnedModel
         /// <summary>
         /// Gets the current bone transform matrices, relative to their parent bones.
         /// </summary>
-        public virtual Matrix[] GetBoneTransforms()
+        public 
+        #region BaamStudios XnaMixamoImporter Change
+        virtual
+        #endregion
+         Matrix[] GetBoneTransforms()
         {
             return boneTransforms;
         }
@@ -198,6 +220,7 @@ namespace SkinnedModel
         }
 
 
+        #region BaamStudios XnaMixamoImporter Change
         /// <summary>
         /// Gets the inverse absolute bind pose transforms.
         /// </summary>
@@ -223,6 +246,7 @@ namespace SkinnedModel
         {
             return skinningDataValue.BoneNames;
         }
+        #endregion
 
 
         /// <summary>
