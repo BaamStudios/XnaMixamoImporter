@@ -19,12 +19,24 @@ namespace BaamStudios.AnimationController
         {
             Name = name;
             SkinningData = LoadSkinningData(file);
-            AnimationPlayer = new AnimationPlayer(SkinningData);
+            AnimationPlayer = CreateAnimationPlayer();
+        }
+
+        public Animation(string name, SkinningData data)
+        {
+            Name = name;
+            SkinningData = data;
+            AnimationPlayer = CreateAnimationPlayer();
+        }
+
+        protected virtual AnimationPlayer CreateAnimationPlayer()
+        {
+            return new AnimationPlayer(SkinningData);
         }
 
         public static SkinningData LoadSkinningData(Stream file)
         {
-            return (SkinningData) new BinaryFormatter().Deserialize(file);
+            return (SkinningData)new BinaryFormatter().Deserialize(file);
 
             // old json importer. changed to binary because json files are twice the size.
 
