@@ -12,8 +12,10 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 ##What you need
 - [XNA 4](http://www.microsoft.com/en-us/download/details.aspx?id=23714)
 - [Python 2.6.2 x86](https://www.python.org/download/releases/2.6.2) (exact version)
-- [Blender 2.49b x86](http://download.blender.org/release/Blender2.49b/) (exact version) with [Mixamo Blender plugin](https://www.mixamo.com/files/misc/blender_collada1.4.1_importer_win32.zip), install to C:\Program Files (x86)\Blender Foundation\Blender 2.49b
-- [Blender 2.65](http://download.blender.org/release/Blender2.65/) (exact version), install to C:\Program Files\Blender Foundation\Blender 2.65
+- [Blender 2.49b x86](http://download.blender.org/release/Blender2.49b/) (exact version) with [Mixamo Blender plugin](https://www.mixamo.com/files/misc/blender_collada1.4.1_importer_win32.zip)
+  * install to C:\Program Files (x86)\Blender Foundation\Blender 2.49b
+- [Blender 2.65](http://download.blender.org/release/Blender2.65/) (exact version)
+  * install to C:\Program Files\Blender Foundation\Blender 2.65
 - [Autodesk FBX Converter 2013](http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775920) (or maybe later versions)
 - [7-Zip](http://www.7-zip.org/)
 - A character on [mixamo.com](https://www.mixamo.com)
