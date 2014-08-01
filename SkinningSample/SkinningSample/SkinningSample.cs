@@ -125,16 +125,18 @@ namespace SkinningSample
             Matrix[] bones = animationPlayer.GetSkinTransforms();
 
             // Compute camera matrices.
-            Matrix view = Matrix.CreateTranslation(0, -40, 0) * 
-                          Matrix.CreateRotationY(MathHelper.ToRadians(cameraRotation)) *
+            #region BaamStudios XnaMixamoImporter Change
+            Matrix view = Matrix.CreateTranslation(0, -40 * 0.01f, 0) * // BaamStudios: The model is 0.01x the size. adjusted camera offset accordingly.
+                          Matrix.CreateRotationY(MathHelper.ToRadians(cameraRotation) + MathHelper.Pi) * // BaamStudios: The model is in Z-up coordinate system. adjusted model rotation accordingly.
                           Matrix.CreateRotationX(MathHelper.ToRadians(cameraArc)) *
-                          Matrix.CreateLookAt(new Vector3(0, 0, -cameraDistance), 
+                          Matrix.CreateLookAt(new Vector3(0, 0, -cameraDistance * 0.01f), // BaamStudios: The model is 0.01x the size. adjusted camera distance accordingly.
                                               new Vector3(0, 0, 0), Vector3.Up);
 
             Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
                                                                     device.Viewport.AspectRatio,
-                                                                    1,
-                                                                    10000);
+                                                                    0.01f, // BaamStudios: The model is 0.01x the size. adjusted near plane accordingly.
+                                                                    100); // BaamStudios: The model is 0.01x the size. adjusted far plane accordingly.
+            #endregion
 
             // Render the skinned mesh.
             foreach (ModelMesh mesh in currentModel.Meshes)
@@ -145,6 +147,10 @@ namespace SkinningSample
 
                     effect.View = view;
                     effect.Projection = projection;
+                    #region BaamStudios XnaMixamoImporter Change
+                    // BaamStudios: The model is in Z-up coordinate system. Rotate to Y-up:
+                    effect.World = Matrix.CreateRotationX(-MathHelper.PiOver2);
+                    #endregion
 
                     effect.EnableDefaultLighting();
 

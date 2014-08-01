@@ -11,7 +11,9 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 
 ##What you need
 - [XNA 4](http://www.microsoft.com/en-us/download/details.aspx?id=23714)
-- [Blender 2.65](http://download.blender.org/release/Blender2.65/) (not later versions!)
+- [Python 2.6.2 x86](https://www.python.org/download/releases/2.6.2) (exact version)
+- [Blender 2.49b x86](http://download.blender.org/release/Blender2.49b/) (exact version) with [Mixamo Blender plugin](https://www.mixamo.com/files/misc/blender_collada1.4.1_importer_win32.zip), install to C:\Program Files (x86)\Blender Foundation\Blender 2.49b
+- [Blender 2.65](http://download.blender.org/release/Blender2.65/) (exact version), install to C:\Program Files\Blender Foundation\Blender 2.65
 - [Autodesk FBX Converter 2013](http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775920) (or maybe later versions)
 - [7-Zip](http://www.7-zip.org/)
 - A character on [mixamo.com](https://www.mixamo.com)
@@ -22,7 +24,7 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 
 ## Setup
 - Compile [BaamStudios.AnimationExtractor](BaamStudios.AnimationExtractor) with Visual Studio
-- Make sure that the paths at the top of [internal_convert.bat](Scripts/internal_convert.bat) point to the programs mentioned in _What you need_. This should already be correct in most cases.
+- Make sure that the paths at the top of [internal_convert.bat](Scripts/internal_convert.bat) point to the programs mentioned in _What you need_.
 
 ##How to import the character model
 - Export your character with the t-pose animation on [mixamo.com](https://www.mixamo.com) as "include skin" and "Collada for Blender 2.49 (.dae zipped)"
@@ -39,7 +41,7 @@ Content pipeline tools for importing animated models from [mixamo.com](https://w
 - Load the [SkinningData](SkinningSample/SkinnedModel/SkinningData.cs) from the .anim files with [BaamStudios.Animation](BaamStudios.AnimationController/Animation.cs).LoadSkinningData(animFile) or use [BaamStudios.AnimationController.AnimationController](BaamStudios.AnimationController/AnimationController.cs).AddAnimation(name, file)
 
 ##Notes
-- This project includes the [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model). Some minor changes have been made, which are enclosed in C#-regions containing the word "BaamStudio".
+- This project includes the [skinned model sample](http://xbox.create.msdn.com/en-US/education/catalog/sample/skinned_model). Some changes have been made, which are enclosed in C#-regions containing the word "BaamStudio".
 - The .anim files are just binary serialized [SkinningData](SkinningSample/SkinnedModel/SkinningData.cs). You could use other formats (e.g. json) if you like. There is some commented code prepared in [Animation](BaamStudios.AnimationController/Animation.cs) and [AnimationExtractorModelProcessor](BaamStudios.AnimationExtractorPipeline/AnimationExtractorModelProcessor.cs) to get you started on json format using [ServiceStack.Text](https://servicestack.net/text).
 - This project was built around a character made with [Fuse](https://www.mixamo.com/fuse). Other character generators may not be supported yet. Please contact us if you would like to contribute your changes to support other model sources.
 - The .anim files will probably only work with the character that was used to export them from [mixamo.com](https://www.mixamo.com) because other characters ususally have different t-pose bone positions. However, this has not been confirmed yet and there is a chance that different characters may work with the same .anim files if the skeletons contain the same bones and the two characters have similar proportions.
